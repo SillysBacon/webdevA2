@@ -1,0 +1,236 @@
+@font-face {
+	font-family: TitleFont;
+	src: url("fonts/CattoPurooDisplay-Zp9AJ.ttf");
+}
+
+@font-face {
+	font-family: MainFont;
+	src: url("fonts/KiddosyfreeRegular-GOEag.otf");
+}
+
+@font-face {
+	font-family: BackupFont;
+	src: url("fonts/KittyMeowDemo-e90YB.otf");
+}
+
+@keyframes titleAnim {
+	0% {bottom: 200px;}
+	10% {bottom: -270px; transform: scale(2,2);}
+	15% {bottom: -270px; transform: matrix(2, -0.5, 0.5, 2, 0, 0);}
+	25% {bottom: -270px; transform: matrix(2, 0.5, -0.5, 2, 0, 0);}
+	35% {bottom: -270px; transform: matrix(2, 0, 0, 2, 0, 0);}
+	45% {bottom: -270px; transform: matrix(2, 0, 0, 2, 0, 0);}
+	80% {bottom: -270px; transform: matrix(2, 0, 0, 2, 0, 0);}
+	100% {bottom: 0px;}
+}
+
+@keyframes titleAnimAfter {
+	0% {transform: matrix(1, 0, 0, 1, 0, 700);}
+	100% {transform: matrix(1, 0, 0, 1, 0, 0);}
+}
+
+@keyframes pageAnim {
+	0% {transform: matrix(1, 0, 0, 1, 0, 700);}
+	100% {transform: matrix(1, 0, 0, 1, 0, 0);}
+}
+
+@keyframes switchAnim {
+	0% {transform: matrix(0.5, 0, 0, 0.5, 0, 100); opacity: 0;}
+	100% {transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;}
+}
+
+.pageAnim {
+	animation: pageAnim 1s ease;
+}
+
+.switch {
+	animation: switchAnim 1s ease;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+}
+
+body {
+	background: #F9C784;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	flex-basis: 100%;
+	height: 20vh;
+	margin: 5vh 0 2vh 0;
+	position: relative;
+	animation: titleAnim 1.4s linear;
+}
+
+nav {
+	flex-basis: 100%;
+	height: 8vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0 0 5vh 0;
+	animation: titleAnimAfter 0.5s linear;
+}
+
+h1 {
+	font-family: TitleFont;
+	font-size: 7em;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+main {
+	font-family: MainFont, BackupFont, TitleFont;
+	flex-basis: 95%;
+	height: 50%;
+}
+
+footer {
+	font-family: TitleFont;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 3em;
+	color: #FFFFFF;
+	margin: 4vh 0 0 0;
+}
+
+.buttons {
+	font-family: TitleFont;
+	font-size: 3em;
+	line-height: 1.5em;
+	border: none;
+	color: #FFFFFF;
+	background-color: #FCAF58;
+	width: 30%;
+	height: 100%;
+	border-color: white;
+	transition: width 0.5s ease;
+}
+
+.buttons:hover {
+	width: 38%;
+}
+
+#page1btn {
+	border-style: solid none solid solid;
+}
+
+#page2btn {
+	border-style: solid none solid none;
+}
+
+#page3btn {
+	border-style: solid solid solid none;
+}
+
+.page {
+	background: #FCAF58;
+	color: #FFFFFF;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	padding: 4vh 2vw;
+}
+
+.page h2 {
+	flex-basis: 100%;
+	font-size: 3em;
+	text-align: center;
+	margin: 2vh 0 5vh 0;
+}
+
+#page1 p {
+	background: #FBBB6E;
+	flex-basis: 45%;
+	font-size: 1.5em;
+	margin: 0 2vw 4vh 2vw;
+	padding: 4vh 4vw;
+	border-radius: 70px;
+	transition: background 0.5s ease;
+}
+
+#page1 p:hover {
+	background: #FBD5A3;
+}
+
+#page2 {
+	justify-content: flex-start;
+}
+
+#page2 h3 {
+	font-size: 2em;
+	margin: 2vh 0 0 0;
+}
+
+#page2 p {
+	font-size: 1.5em;
+	margin: 0 0 4vh 0;
+}
+	
+#page3 img {
+	width: 340.5px;
+	height: 340.5px;
+	border-radius: 200px;
+}
+
+.cat {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#page3 article h3 {
+	flex-basis: 100%;
+	font-size: 3em;
+}
+
+#page3 article p {
+	font-size: 1.6em;
+}
+
+/*CSS for responsive menu*/
+#hamIcon {
+	
+	display:none;
+	
+	}
+	
+@media (max-width:800px){
+	
+/*make a menu items vertical*/
+nav ul li {
+	
+	display:block;
+	
+	}
+/* unhide menu icon */
+#hamIcon {
+	
+	display:block;
+	
+	}
+/*hide the menu item list*/
+nav ul {
+	
+	display:none;
+	
+	}
+}
+/*to unhide menu items*/
+.menuShow {
+	
+	display:block;
+	
+	}
